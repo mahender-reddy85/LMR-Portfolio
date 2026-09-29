@@ -83,9 +83,14 @@
     const links = qa(".nav-link");
     const navbar = q(".navbar");
     if (hamburger && menu) {
+      const updateHamburgerAria = () => {
+        const isOpen = menu.classList.contains("active");
+        hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      };
       hamburger.addEventListener("click", () => {
         hamburger.classList.toggle("active");
         menu.classList.toggle("active");
+        updateHamburgerAria();
         document.body.style.overflow = menu.classList.contains("active")
           ? "hidden"
           : "";
@@ -94,6 +99,7 @@
         if (!hamburger.contains(e.target) && !menu.contains(e.target)) {
           hamburger.classList.remove("active");
           menu.classList.remove("active");
+          updateHamburgerAria();
           document.body.style.overflow = "";
         }
       });
@@ -104,6 +110,7 @@
         if (menu && menu.classList.contains("active")) {
           hamburger.classList.remove("active");
           menu.classList.remove("active");
+          hamburger.setAttribute("aria-expanded", "false");
           document.body.style.overflow = "";
         }
       }),
@@ -150,26 +157,13 @@
           if (window.innerWidth > 768 && menu) {
             hamburger.classList.remove("active");
             menu.classList.remove("active");
+            hamburger.setAttribute("aria-expanded", "false");
             document.body.style.overflow = "";
           }
         }, 180);
       },
       { passive: true },
     );
-    const resumeLink = q(".resume-link");
-    if (resumeLink) {
-      resumeLink.addEventListener("click", (e) => {
-        e.preventDefault();
-        const originalText = resumeLink.textContent;
-        resumeLink.textContent = "Loading...";
-        resumeLink.style.pointerEvents = "none";
-        setTimeout(() => {
-          window.open(resumeLink.href, "_blank");
-          resumeLink.textContent = originalText;
-          resumeLink.style.pointerEvents = "";
-        }, 1000);
-      });
-    }
   }
   function parallax() {
     if (prefersReduce) return;
@@ -391,13 +385,6 @@
           );
       });
   }
-  function themeToggle() {
-    const toggle = q("#theme-toggle");
-    if (!toggle) return;
-    toggle.setAttribute("role", "button");
-    if (!toggle.getAttribute("aria-label"))
-      toggle.setAttribute("aria-label", "Toggle theme");
-  }
   function fadeInSections() {
     const sections = qa(".fade-in-section");
     if (!sections.length) return;
@@ -414,7 +401,6 @@
   document.addEventListener("DOMContentLoaded", () => {
     typewriter();
     navigation();
-    themeToggle();
     contact();
     fadeInSections();
     (window.requestIdleCallback

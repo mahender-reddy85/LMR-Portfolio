@@ -6,31 +6,28 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>LMR - Portfolio</title>
     <meta
-      content="AI enthusiast and java developer specializing in Artificial Intelligence and web development."
+      content="Full-Stack Developer &amp; AI/ML Enthusiast showcasing projects, skills, and experience."
       name="description"
     />
     <meta content="#2C3E50" name="theme-color" />
-    <link href="https://mahender-reddy85.github.io/portfolio" rel="canonical" />
+    <link href="https://lmr-works.vercel.app/" rel="canonical" />
     <link as="image" href="mahender.jpg" rel="preload" type="image/jpeg" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link href="//github.com" rel="dns-prefetch" />
     <link href="//linkedin.com" rel="dns-prefetch" />
     <meta
-      content="Likki Mahender Reddy | AI Enthusiast &amp; Java Developer"
+      content="Likki Mahender Reddy | Full-Stack Developer &amp; AI/ML Enthusiast"
       property="og:title"
     />
     <meta
-      content="AI Enthusiast &amp; Java Developer showcasing projects, skills, and experience."
+      content="Full-Stack Developer &amp; AI/ML Enthusiast showcasing projects, skills, and experience."
       property="og:description"
     />
     <meta content="website" property="og:type" />
+    <meta content="https://lmr-works.vercel.app/" property="og:url" />
     <meta
-      content="https://mahender-reddy85.github.io/portfolio"
-      property="og:url"
-    />
-    <meta
-      content="https://mahender-reddy85.github.io/portfolio/mahender.jpg"
+      content="https://lmr-works.vercel.app/mahender.jpg"
       property="og:image"
     />
     <meta content="summary_large_image" name="twitter:card" />
@@ -39,6 +36,11 @@
       rel="stylesheet"
     />
     <link href="style.css" rel="stylesheet" />
+    <link
+      href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;⚡&lt;/text&gt;&lt;/svg&gt;"
+      rel="icon"
+      type="image/svg+xml"
+    />
   </head>
   <body>
     <div id="burning-intro">
@@ -49,7 +51,6 @@
       <canvas id="fire-overlay"></canvas>
     </div>
     <section class="page-root">
-      <canvas id="fluid-canvas"></canvas>
       <nav class="navbar">
         <div class="nav-container">
           <div class="nav-logo">
@@ -64,12 +65,18 @@
             <a
               class="nav-link resume-link"
               href="Resume - LMR.pdf"
+              rel="noopener noreferrer"
               target="_blank"
               >Resume</a
             >
             <a class="nav-link" href="#contact">Contact</a>
           </div>
-          <div class="theme-toggle" id="theme-toggle">
+          <button
+            aria-label="Toggle theme"
+            class="theme-toggle"
+            id="theme-toggle"
+            type="button"
+          >
             <svg
               class="theme-icon theme-icon--sun"
               fill="none"
@@ -96,12 +103,18 @@
             >
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
-          </div>
-          <div class="hamburger" id="hamburger">
+          </button>
+          <button
+            aria-expanded="false"
+            aria-label="Open navigation"
+            class="hamburger"
+            id="hamburger"
+            type="button"
+          >
             <span></span>
             <span></span>
             <span></span>
-          </div>
+          </button>
         </div>
       </nav>
       <section class="hero hero--no-photo" id="home">
@@ -125,8 +138,8 @@
               <h2 class="hero-subtitle">
                 <span
                   class="typewriter-subtitle"
-                  data-texts="Aspiring full stack developer,UI/UX designer,Prompt engineer,AI enthusiast,"
-                  >AI Enthusiast &amp; Java Developer</span
+                  data-texts="Full-Stack Developer,AI/ML Enthusiast,Interactive Web Applications,"
+                  >Full-Stack Developer | AI/ML Enthusiast</span
                 >
               </h2>
               <p class="hero-location animate-fade-up">
@@ -170,7 +183,9 @@
               </div>
             </div>
             <div class="about-main">
-              <h3 class="about-role">AI Enthusiast &amp; Java Developer</h3>
+              <h3 class="about-role">
+                Full-Stack Developer | AI/ML Enthusiast
+              </h3>
               <div class="about-text">
                 <p class="about-intro">
                   I'm <strong>Likki Mahender Reddy</strong>, a Computer Science
@@ -203,7 +218,7 @@
                       <dt>University</dt>
                       <dd>JNTUH</dd>
                       <dt>CGPA</dt>
-                      <dd>7.08 (Till VI Semester)</dd>
+                      <dd>7.48 (Till VI Semester)</dd>
                       <dt>Expected Graduation</dt>
                       <dd>April 2027</dd>
                     </dl>
@@ -220,8 +235,7 @@
                 </div>
                 <div class="stat-card">
                   <div class="stat-number">10+</div>
-                  <div class="stat-label">Projects</div>
-                  <div class="stat-sublabel">Coding Platforms</div>
+                  <div class="stat-label">Projects Built</div>
                 </div>
               </div>
             </div>
@@ -230,9 +244,10 @@
       </section>
       <section class="projects fade-in-section" id="projects">
         <div class="container">
-          <h2 class="section-title">Featured Projects</h2>
-          <div class="projects-grid">
-            <div class="project-card">
+          <h2 class="section-title">Projects</h2>
+          <h3 class="projects-category-title">Featured Projects</h3>
+          <div class="projects-grid featured-projects-grid">
+            <div class="project-card featured-project-card">
               <div class="project-header">
                 <h3>
                   Bingo25
@@ -240,7 +255,7 @@
                     aria-label="Open project site"
                     class="project-external"
                     href="https://bingo25-eight.vercel.app/"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                     target="_blank"
                   >
                     <svg
@@ -261,7 +276,75 @@
                     aria-label="View Code"
                     class="project-external"
                     href="https://github.com/mahender-reddy85/bingo25"
-                    rel="noopener"
+                    rel="noopener noreferrer"
+                    style="margin-left: 8px"
+                    target="_blank"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="feather feather-github"
+                      fill="none"
+                      height="16"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      viewbox="0 0 24 24"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                      ></path>
+                    </svg>
+                  </a>
+                </h3>
+                <div class="project-tech">
+                  <span class="tech-tag">React 19</span>
+                  <span class="tech-tag">TypeScript</span>
+                  <span class="tech-tag">Tailwind</span>
+                  <span class="tech-tag">Vite</span>
+                  <span class="tech-tag">Redis</span>
+                </div>
+              </div>
+              <div class="project-description">
+                <ul class="project-highlights">
+                  <li>Real-time room-based multiplayer gameplay</li>
+                  <li>Customizable grid arrangement before match start</li>
+                  <li>Serverless state management with Upstash Redis</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-card featured-project-card">
+              <div class="project-header">
+                <h3>
+                  C-Escape – 3D Programming Escape Room
+                  <a
+                    aria-label="Open project site"
+                    class="project-external"
+                    href="https://escape-room-ashen.vercel.app/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      fill="none"
+                      height="16"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      viewbox="0 0 24 24"
+                      width="16"
+                    >
+                      <path d="M14 3h7v7"></path>
+                      <path d="M10 14L21 3"></path>
+                      <path d="M21 21H3V3"></path>
+                    </svg>
+                  </a>
+                  <a
+                    aria-label="View Code"
+                    class="project-external"
+                    href="https://github.com/mahender-reddy85/Escape-Room"
+                    rel="noopener noreferrer"
                     style="margin-left: 8px"
                     target="_blank"
                   >
@@ -287,143 +370,21 @@
                 <div class="project-tech">
                   <span class="tech-tag">React</span>
                   <span class="tech-tag">TypeScript</span>
-                  <span class="tech-tag">Vite</span>
-                  <span class="tech-tag">Redis</span>
+                  <span class="tech-tag">Three.js</span>
+                  <span class="tech-tag">Tailwind</span>
                 </div>
               </div>
               <div class="project-description">
-                <p>
-                  A real-time multiplayer 1–25 Bingo game. Create a game, share
-                  the code with a friend, and compete to see who gets BINGO
-                  first!
-                </p>
+                <ul class="project-highlights">
+                  <li>Interactive 3D room rendering using Three.js</li>
+                  <li>Embedded programming puzzle solver engine</li>
+                  <li>
+                    Modular progression mechanics &amp; smooth WebGL graphics
+                  </li>
+                </ul>
               </div>
             </div>
-
-            <div class="project-card">
-              <div class="project-header">
-                <h3>
-                  Advanced Calculator
-                  <a
-                    aria-label="Open project site"
-                    class="project-external"
-                    href="https://adv-calci.vercel.app/"
-                    rel="noopener"
-                    target="_blank"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="none"
-                      height="16"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      viewbox="0 0 24 24"
-                      width="16"
-                    >
-                      <path d="M14 3h7v7"></path>
-                      <path d="M10 14L21 3"></path>
-                      <path d="M21 21H3V3"></path>
-                    </svg>
-                  </a>
-                  <a
-                    aria-label="View Code"
-                    class="project-external"
-                    href="https://github.com/mahender-reddy85/Advanced-Calculator"
-                    rel="noopener"
-                    style="margin-left: 8px"
-                    target="_blank"
-                    ><svg
-                      aria-hidden="true"
-                      class="feather feather-github"
-                      fill="none"
-                      height="16"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      viewbox="0 0 24 24"
-                      width="16"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                      ></path></svg
-                  ></a>
-                </h3>
-                <div class="project-tech">
-                  <span class="tech-tag">HTML</span>
-                  <span class="tech-tag">CSS</span>
-                  <span class="tech-tag">JS</span>
-                </div>
-              </div>
-              <div class="project-description">
-                <p>
-                  Your All-in-One Scientific Calculator — Smart, Fast, and
-                  Feature-Packed.
-                </p>
-              </div>
-            </div>
-            <div class="project-card">
-              <div class="project-header">
-                <h3>
-                  DropIn
-                  <a
-                    aria-label="Open project site"
-                    class="project-external"
-                    href="https://drop-in-lmr.vercel.app/"
-                    rel="noopener"
-                    target="_blank"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="none"
-                      height="16"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      viewbox="0 0 24 24"
-                      width="16"
-                    >
-                      <path d="M14 3h7v7"></path>
-                      <path d="M10 14L21 3"></path>
-                      <path d="M21 21H3V3"></path>
-                    </svg>
-                  </a>
-                  <a
-                    aria-label="View Code"
-                    class="project-external"
-                    href="https://github.com/mahender-reddy85/DropIn"
-                    rel="noopener"
-                    style="margin-left: 8px"
-                    target="_blank"
-                    ><svg
-                      aria-hidden="true"
-                      class="feather feather-github"
-                      fill="none"
-                      height="16"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      viewbox="0 0 24 24"
-                      width="16"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                      ></path></svg
-                  ></a>
-                </h3>
-                <div class="project-tech">
-                  <span class="tech-tag">HTML</span>
-                  <span class="tech-tag">CSS</span>
-                  <span class="tech-tag">JS</span>
-                </div>
-              </div>
-              <div class="project-description">
-                <p>Send files in a flash — anywhere, anytime.</p>
-              </div>
-            </div>
-            <div class="project-card">
+            <div class="project-card featured-project-card">
               <div class="project-header">
                 <h3>
                   Traffic Monitoring System using YOLOv8 &amp; OpenCV
@@ -431,7 +392,7 @@
                     aria-label="Open project site"
                     class="project-external"
                     href="https://huggingface.co/spaces/Likki-Mahender-Reddy/TrafficVision"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                     target="_blank"
                   >
                     <svg
@@ -452,10 +413,11 @@
                     aria-label="View Code"
                     class="project-external"
                     href="https://huggingface.co/spaces/Likki-Mahender-Reddy/TrafficVision/tree/main"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                     style="margin-left: 8px"
                     target="_blank"
-                    ><svg
+                  >
+                    <svg
                       aria-hidden="true"
                       class="feather feather-github"
                       fill="none"
@@ -470,23 +432,101 @@
                     >
                       <path
                         d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                      ></path></svg
-                  ></a>
+                      ></path>
+                    </svg>
+                  </a>
                 </h3>
                 <div class="project-tech">
                   <span class="tech-tag">Python</span>
-                  <span class="tech-tag">Gradio</span>
+                  <span class="tech-tag">YOLOv8</span>
                   <span class="tech-tag">OpenCV</span>
-                  <span class="tech-tag">pandas</span>
+                  <span class="tech-tag">Gradio</span>
+                  <span class="tech-tag">Pandas</span>
                 </div>
               </div>
               <div class="project-description">
-                <p>
-                  AI-powered Traffic Monitoring: Count, Track, Analyze in
-                  Real-Time.
-                </p>
+                <ul class="project-highlights">
+                  <li>
+                    YOLOv8 deep learning model object detection &amp; tracking
+                  </li>
+                  <li>Real-time vehicle classification with OpenCV</li>
+                  <li>
+                    Interactive Gradio web interface &amp; statistical logging
+                  </li>
+                </ul>
               </div>
             </div>
+            <div class="project-card featured-project-card">
+              <div class="project-header">
+                <h3>
+                  DocuQuery – AI Document Assistant
+                  <a
+                    aria-label="Open project site"
+                    class="project-external"
+                    href="https://docu-query-three.vercel.app/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      fill="none"
+                      height="16"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      viewbox="0 0 24 24"
+                      width="16"
+                    >
+                      <path d="M14 3h7v7"></path>
+                      <path d="M10 14L21 3"></path>
+                      <path d="M21 21H3V3"></path>
+                    </svg>
+                  </a>
+                  <a
+                    aria-label="View Code"
+                    class="project-external"
+                    href="https://github.com/mahender-reddy85/DocuQuery"
+                    rel="noopener noreferrer"
+                    style="margin-left: 8px"
+                    target="_blank"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="feather feather-github"
+                      fill="none"
+                      height="16"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      viewbox="0 0 24 24"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                      ></path>
+                    </svg>
+                  </a>
+                </h3>
+                <div class="project-tech">
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">AI / Embeddings</span>
+                </div>
+              </div>
+              <div class="project-description">
+                <ul class="project-highlights">
+                  <li>RAG pipeline for custom PDF document parsing</li>
+                  <li>Contextual vector search and AI query responses</li>
+                  <li>Clean single-page responsive assistant interface</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <h3 class="projects-category-title" style="margin-top: 2.5rem">
+            Other Projects
+          </h3>
+          <div class="projects-grid other-projects-grid">
             <div class="project-card">
               <div class="project-header">
                 <h3>
@@ -495,7 +535,7 @@
                     aria-label="Open project site"
                     class="project-external"
                     href="https://qrender.vercel.app/"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                     target="_blank"
                   >
                     <svg
@@ -516,10 +556,11 @@
                     aria-label="View Code"
                     class="project-external"
                     href="https://github.com/mahender-reddy85/QRender"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                     style="margin-left: 8px"
                     target="_blank"
-                    ><svg
+                  >
+                    <svg
                       aria-hidden="true"
                       class="feather feather-github"
                       fill="none"
@@ -534,17 +575,21 @@
                     >
                       <path
                         d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                      ></path></svg
-                  ></a>
+                      ></path>
+                    </svg>
+                  </a>
                 </h3>
                 <div class="project-tech">
                   <span class="tech-tag">Next.js</span>
-                  <span class="tech-tag">Typescript</span>
+                  <span class="tech-tag">TypeScript</span>
                   <span class="tech-tag">Tailwind</span>
                 </div>
               </div>
               <div class="project-description">
-                <p>Create, customize, and manage your QR codes instantly.</p>
+                <p>
+                  Dynamic QR code generator and customizer with instant SVG/PNG
+                  export and live styling options.
+                </p>
               </div>
             </div>
             <div class="project-card">
@@ -555,10 +600,11 @@
                     aria-label="Open project site"
                     class="project-external"
                     href="https://scramble-eta.vercel.app/"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                     target="_blank"
                   >
                     <svg
+                      aria-hidden="true"
                       fill="none"
                       height="16"
                       stroke="currentColor"
@@ -575,10 +621,11 @@
                     aria-label="View Code"
                     class="project-external"
                     href="https://github.com/mahender-reddy85/Scramble"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                     style="margin-left: 8px"
                     target="_blank"
-                    ><svg
+                  >
+                    <svg
                       aria-hidden="true"
                       class="feather feather-github"
                       fill="none"
@@ -593,8 +640,9 @@
                     >
                       <path
                         d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                      ></path></svg
-                  ></a>
+                      ></path>
+                    </svg>
+                  </a>
                 </h3>
                 <div class="project-tech">
                   <span class="tech-tag">React</span>
@@ -604,23 +652,25 @@
               </div>
               <div class="project-description">
                 <p>
-                  Full-stack word scramble game with scoring and persistent user
-                  data storage.
+                  Full-stack word scramble puzzle game with difficulty levels,
+                  live scoring, and persistent user progress tracking using
+                  PostgreSQL.
                 </p>
               </div>
             </div>
             <div class="project-card">
               <div class="project-header">
                 <h3>
-                  DocuQuery – AI Document Assistant
+                  DropIn
                   <a
                     aria-label="Open project site"
                     class="project-external"
-                    href="https://docu-query-three.vercel.app/"
-                    rel="noopener"
+                    href="https://drop-in-lmr.vercel.app/"
+                    rel="noopener noreferrer"
                     target="_blank"
                   >
                     <svg
+                      aria-hidden="true"
                       fill="none"
                       height="16"
                       stroke="currentColor"
@@ -636,11 +686,12 @@
                   <a
                     aria-label="View Code"
                     class="project-external"
-                    href="https://github.com/mahender-reddy85/DocuQuery"
-                    rel="noopener"
+                    href="https://github.com/mahender-reddy85/DropIn"
+                    rel="noopener noreferrer"
                     style="margin-left: 8px"
                     target="_blank"
-                    ><svg
+                  >
+                    <svg
                       aria-hidden="true"
                       class="feather feather-github"
                       fill="none"
@@ -655,33 +706,36 @@
                     >
                       <path
                         d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                      ></path></svg
-                  ></a>
+                      ></path>
+                    </svg>
+                  </a>
                 </h3>
                 <div class="project-tech">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
                   <span class="tech-tag">JavaScript</span>
-                  <span class="tech-tag">AI</span>
                 </div>
               </div>
               <div class="project-description">
                 <p>
-                  Upload documents and ask questions to retrieve context-aware
-                  answers using AI.
+                  High-speed peer-to-peer file transfer web application built
+                  with browser WebRTC APIs for instant file sharing.
                 </p>
               </div>
             </div>
             <div class="project-card">
               <div class="project-header">
                 <h3>
-                  C-Escape – 3D Programming Escape Room
+                  Advanced Calculator
                   <a
                     aria-label="Open project site"
                     class="project-external"
-                    href="https://escape-room-ashen.vercel.app/"
-                    rel="noopener"
+                    href="https://adv-calci.vercel.app/"
+                    rel="noopener noreferrer"
                     target="_blank"
                   >
                     <svg
+                      aria-hidden="true"
                       fill="none"
                       height="16"
                       stroke="currentColor"
@@ -697,11 +751,12 @@
                   <a
                     aria-label="View Code"
                     class="project-external"
-                    href="https://github.com/mahender-reddy85/Escape-Room"
-                    rel="noopener"
+                    href="https://github.com/mahender-reddy85/Advanced-Calculator"
+                    rel="noopener noreferrer"
                     style="margin-left: 8px"
                     target="_blank"
-                    ><svg
+                  >
+                    <svg
                       aria-hidden="true"
                       class="feather feather-github"
                       fill="none"
@@ -716,20 +771,21 @@
                     >
                       <path
                         d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                      ></path></svg
-                  ></a>
+                      ></path>
+                    </svg>
+                  </a>
                 </h3>
                 <div class="project-tech">
-                  <span class="tech-tag">React</span>
-                  <span class="tech-tag">TypeScript</span>
-                  <span class="tech-tag">Three.js</span>
-                  <span class="tech-tag">Tailwind</span>
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">JavaScript</span>
                 </div>
               </div>
               <div class="project-description">
                 <p>
-                  Immersive 3D escape room where users solve programming
-                  challenges to progress through levels.
+                  Full-featured scientific calculator web app with real-time
+                  expression parsing, memory functions, and full keyboard input
+                  handling.
                 </p>
               </div>
             </div>
@@ -764,6 +820,22 @@
                 </div>
                 <div class="skill-item">
                   <img
+                    alt="JavaScript"
+                    class="skill-icon"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                  />
+                  <span class="skill-name">JavaScript</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    alt="TypeScript"
+                    class="skill-icon"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                  />
+                  <span class="skill-name">TypeScript</span>
+                </div>
+                <div class="skill-item">
+                  <img
                     alt="C++"
                     class="skill-icon"
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
@@ -772,12 +844,28 @@
                 </div>
               </div>
             </div>
-            <div class="skills-group skills-group--web">
+            <div class="skills-group skills-group--frontend">
               <div class="skills-head">
-                <div aria-hidden="true" class="skills-icon">🌐</div>
-                <h3>Web Technologies</h3>
+                <div aria-hidden="true" class="skills-icon">🎨</div>
+                <h3>Frontend</h3>
               </div>
               <div class="skills-images">
+                <div class="skill-item">
+                  <img
+                    alt="React"
+                    class="skill-icon"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                  />
+                  <span class="skill-name">React</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    alt="Next.js"
+                    class="skill-icon"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                  />
+                  <span class="skill-name">Next.js</span>
+                </div>
                 <div class="skill-item">
                   <img
                     alt="HTML5"
@@ -796,20 +884,20 @@
                 </div>
                 <div class="skill-item">
                   <img
-                    alt="JavaScript"
+                    alt="Tailwind CSS"
                     class="skill-icon"
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
                   />
-                  <span class="skill-name">JavaScript</span>
+                  <span class="skill-name">Tailwind CSS</span>
                 </div>
-                <div class="skill-item">
-                  <img
-                    alt="React"
-                    class="skill-icon"
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                  />
-                  <span class="skill-name">React</span>
-                </div>
+              </div>
+            </div>
+            <div class="skills-group skills-group--backend">
+              <div class="skills-head">
+                <div aria-hidden="true" class="skills-icon">⚙️</div>
+                <h3>Backend</h3>
+              </div>
+              <div class="skills-images">
                 <div class="skill-item">
                   <img
                     alt="Node.js"
@@ -817,22 +905,6 @@
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
                   />
                   <span class="skill-name">Node.js</span>
-                </div>
-              </div>
-            </div>
-            <div class="skills-group skills-group--frameworks">
-              <div class="skills-head">
-                <div aria-hidden="true" class="skills-icon">🧰</div>
-                <h3>Frameworks &amp; Libraries</h3>
-              </div>
-              <div class="skills-images">
-                <div class="skill-item">
-                  <img
-                    alt="Flask"
-                    class="skill-icon"
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg"
-                  />
-                  <span class="skill-name">Flask</span>
                 </div>
                 <div class="skill-item">
                   <img
@@ -844,11 +916,11 @@
                 </div>
                 <div class="skill-item">
                   <img
-                    alt="Matplotlib"
+                    alt="Flask"
                     class="skill-icon"
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg"
                   />
-                  <span class="skill-name">Matplotlib</span>
+                  <span class="skill-name">Flask</span>
                 </div>
               </div>
             </div>
@@ -874,6 +946,14 @@
                   />
                   <span class="skill-name">MySQL</span>
                 </div>
+                <div class="skill-item">
+                  <img
+                    alt="Redis"
+                    class="skill-icon"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg"
+                  />
+                  <span class="skill-name">Redis</span>
+                </div>
               </div>
             </div>
             <div class="skills-group skills-group--aiml">
@@ -889,6 +969,14 @@
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
                   />
                   <span class="skill-name">TensorFlow</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    alt="OpenCV"
+                    class="skill-icon"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg"
+                  />
+                  <span class="skill-name">OpenCV</span>
                 </div>
                 <div class="skill-item">
                   <img
@@ -916,29 +1004,72 @@
                 </div>
               </div>
             </div>
-            <div class="skills-group skills-group--soft">
+            <div class="skills-group skills-group--tools">
               <div class="skills-head">
-                <div aria-hidden="true" class="skills-icon">✨</div>
-                <h3>Soft Skills</h3>
+                <div aria-hidden="true" class="skills-icon">🛠️</div>
+                <h3>Tools &amp; Platforms</h3>
               </div>
               <div class="skills-images">
                 <div class="skill-item">
-                  <div class="skill-icon soft-icon">🎯</div>
-                  <span class="skill-name">Problem Solving</span>
+                  <img
+                    alt="Git"
+                    class="skill-icon"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                  />
+                  <span class="skill-name">Git</span>
                 </div>
                 <div class="skill-item">
-                  <div class="skill-icon soft-icon">📚</div>
-                  <span class="skill-name">Self-Learning</span>
+                  <img
+                    alt="GitHub"
+                    class="skill-icon"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                  />
+                  <span class="skill-name">GitHub</span>
                 </div>
                 <div class="skill-item">
-                  <div class="skill-icon soft-icon">🤝</div>
-                  <span class="skill-name">Team Collaboration</span>
+                  <img
+                    alt="Vercel"
+                    class="skill-icon"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg"
+                  />
+                  <span class="skill-name">Vercel</span>
                 </div>
                 <div class="skill-item">
-                  <div class="skill-icon soft-icon">🎤</div>
-                  <span class="skill-name">Presentation</span>
+                  <img
+                    alt="Docker"
+                    class="skill-icon"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                  />
+                  <span class="skill-name">Docker</span>
                 </div>
               </div>
+            </div>
+          </div>
+          <div class="soft-skills-wrapper" style="margin-top: 2rem">
+            <h4
+              class="soft-skills-title"
+              style="
+                font-size: 1rem;
+                color: var(--text-secondary);
+                margin-bottom: 0.75rem;
+                text-align: center;
+              "
+            >
+              Core Competencies &amp; Soft Skills
+            </h4>
+            <div
+              class="pill-list"
+              style="
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+              "
+            >
+              <span class="pill">Problem Solving</span>
+              <span class="pill">Self-Learning</span>
+              <span class="pill">Team Collaboration</span>
+              <span class="pill">Presentation</span>
             </div>
           </div>
         </div>
@@ -952,30 +1083,47 @@
           <div class="gaming-zone-grid">
             <div class="gaming-zone-card">
               <h3>Bingo25</h3>
-              <br />
               <h4>A real-time multiplayer 1–25 Bingo game.</h4>
-              <br />
-              <a href="https://bingo25-eight.vercel.app/" target="_blank">
-                <button class="play-btn">Play Now</button>
+              <p>
+                Play with a friend, swap numbers to customize your board, and
+                compete live!
+              </p>
+              <a
+                class="play-btn"
+                href="https://bingo25-eight.vercel.app/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Play Now
               </a>
             </div>
-
             <div class="gaming-zone-card">
               <h3>Scramble Game</h3>
-              <br />
               <h4>Unscramble the letters and test your vocabulary skills!</h4>
-              <br />
-              <a href="https://scramble-eta.vercel.app/" target="_blank">
-                <button class="play-btn">Play Now</button>
+              <p>
+                Full-stack word puzzle game with live scoring and level
+                progress.
+              </p>
+              <a
+                class="play-btn"
+                href="https://scramble-eta.vercel.app/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Play Now
               </a>
             </div>
             <div class="gaming-zone-card">
               <h3>C-Escape Room</h3>
-              <br />
               <h4>Solve programming challenges to escape the 3D room!</h4>
-              <br />
-              <a href="https://escape-room-ashen.vercel.app/" target="_blank">
-                <button class="play-btn">Play Now</button>
+              <p>Interactive 3D puzzle game where code unlocks room doors.</p>
+              <a
+                class="play-btn"
+                href="https://escape-room-ashen.vercel.app/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Play Now
               </a>
             </div>
           </div>
@@ -1012,7 +1160,7 @@
                 <a
                   class="contact-link"
                   href="https://www.linkedin.com/in/likki-mahender-reddy-632156338/"
-                  rel="noopener"
+                  rel="noopener noreferrer"
                   target="_blank"
                 >
                   <svg
@@ -1030,7 +1178,7 @@
                 <a
                   class="contact-link"
                   href="https://github.com/mahender-reddy85"
-                  rel="noopener"
+                  rel="noopener noreferrer"
                   target="_blank"
                 >
                   <svg
@@ -1100,14 +1248,41 @@
       <footer class="footer">
         <div class="container">
           <div class="footer-content">
-            <p>Likki Mahender Reddy</p>
+            <div class="footer-links">
+              <a
+                href="https://github.com/mahender-reddy85"
+                rel="noopener noreferrer"
+                target="_blank"
+                >GitHub</a
+              >
+              <span class="footer-sep">·</span>
+              <a
+                href="https://www.linkedin.com/in/likki-mahender-reddy-632156338/"
+                rel="noopener noreferrer"
+                target="_blank"
+                >LinkedIn</a
+              >
+              <span class="footer-sep">·</span>
+              <a href="mailto:likkimahenderreddy123@gmail.com">Email</a>
+              <span class="footer-sep">·</span>
+              <a
+                href="Resume - LMR.pdf"
+                rel="noopener noreferrer"
+                target="_blank"
+                >Resume</a
+              >
+            </div>
+            <p class="footer-copy">© 2026 Likki Mahender Reddy</p>
           </div>
         </div>
       </footer>
-      <script defer="" src="script.js"></script>
-      <script defer="" src="app.js"></script>
-      <script defer="" src="splash-cursor.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     </section>
+    <script
+      defer=""
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script defer="" src="script.js"></script>
+    <script defer="" src="app.js"></script>
+    <script defer="" src="splash-cursor.js"></script>
   </body>
 </html>
