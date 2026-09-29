@@ -86,6 +86,10 @@
       const updateHamburgerAria = () => {
         const isOpen = menu.classList.contains("active");
         hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        hamburger.setAttribute(
+          "aria-label",
+          isOpen ? "Close navigation" : "Open navigation",
+        );
       };
       hamburger.addEventListener("click", () => {
         hamburger.classList.toggle("active");
@@ -111,6 +115,7 @@
           hamburger.classList.remove("active");
           menu.classList.remove("active");
           hamburger.setAttribute("aria-expanded", "false");
+          hamburger.setAttribute("aria-label", "Open navigation");
           document.body.style.overflow = "";
         }
       }),
@@ -158,6 +163,7 @@
             hamburger.classList.remove("active");
             menu.classList.remove("active");
             hamburger.setAttribute("aria-expanded", "false");
+            hamburger.setAttribute("aria-label", "Open navigation");
             document.body.style.overflow = "";
           }
         }, 180);
@@ -451,6 +457,14 @@ const Theme = {
     document.documentElement.setAttribute("data-theme", theme);
     document.body.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
+    if (this.toggle) {
+      const isDark = theme === "dark";
+      this.toggle.setAttribute("aria-pressed", isDark ? "true" : "false");
+      this.toggle.setAttribute(
+        "aria-label",
+        isDark ? "Switch to light theme" : "Switch to dark theme",
+      );
+    }
     if (window && window.console) console.log(`Theme changed to: ${theme}`);
     if (!isInitial) {
       window.dispatchEvent(
