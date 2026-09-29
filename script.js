@@ -30,12 +30,7 @@ function createTextTexture(gl) {
   }
   textCtx.textAlign = "center";
   textCtx.textBaseline = "middle";
-  const verticalOffset = isSmallMobile ? -20 : isMobile ? -10 : 0;
-  textCtx.fillText(
-    "LMR",
-    textCanvas.width / 2,
-    textCanvas.height / 2 + verticalOffset,
-  );
+  textCtx.fillText("LMR", textCanvas.width / 2, textCanvas.height / 2);
   textTexture = gl.createTexture();
   gl.bindTexture(gl.TEXTURE_2D, textTexture);
   gl.texImage2D(
@@ -46,15 +41,68 @@ function createTextTexture(gl) {
     gl.UNSIGNED_BYTE,
     textCanvas,
   );
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
   gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
   gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-  gl.clearColor(1.0, 1.0, 1.0, 1.0);
-  gl.clear(gl.COLOR_BUFFER_BIT);
 }
 function initShader() {
-  const vsSource = document.getElementById("vertShader").innerHTML;
-  const fsSource = document.getElementById("fragShader").innerHTML;
+  const vsSource = `
+precision mediump float;
+        varying vec2 vUv;
+        attribute vec2 a_position;
+        void main() {
+            vUv = a_position;
+            gl_Position = vec4(a_position, 0.0, 1.0);
+        }
+`;
+  const fsSource = `
+precision mediump float;
+        varying vec2 vUv;
+        uniform vec2 u_resolution;
+        uniform float u_progress;
+        uniform float u_time;
+        uniform sampler2D u_text;
+        float rand(vec2 n) {
+            return fract(cos(dot(n, vec2(12.9898, 4.1414))) * 43758.5453);
+        }
+        float noise(vec2 n) {
+            const vec2 d = vec2(0., 1.);
+            vec2 b = floor(n), f = smoothstep(vec2(0.0), vec2(1.0), fract(n));
+            return mix(mix(rand(b), rand(b + d.yx), f.x), mix(rand(b + d.xy), rand(b + d.yy), f.x), f.y);
+        }
+        float fbm(vec2 n) {
+            float total = 0.0, amplitude = .4;
+            for (int i = 0; i < 4; i++) {
+                total += noise(n) * amplitude;
+                n += n;
+                amplitude *= 0.6;
+            }
+            return total;
+        }
+        void main() {
+            vec2 uv = vUv;
+            uv.x *= min(1., u_resolution.x / u_resolution.y);
+            uv.y *= min(1., u_resolution.y / u_resolution.x);
+            vec2 screenUv = vUv * 0.5 + 0.5;
+            screenUv.y = 1.0 - screenUv.y;
+            float t = u_progress;
+            vec4 textColor = texture2D(u_text, screenUv);
+            vec3 color = textColor.rgb;
+            float main_noise = 1. - fbm(.75 * uv + 10. - vec2(.3, .9 * t));
+            float paper_darkness = smoothstep(main_noise - .1, main_noise, t);
+            color -= vec3(.99, .95, .99) * paper_darkness;
+            vec3 fire_color = fbm(6. * uv - vec2(0., .005 * u_time)) * vec3(6., 1.4, .0);
+            float show_fire = smoothstep(.4, .9, fbm(10. * uv + 2. - vec2(0., .005 * u_time)));
+            show_fire += smoothstep(.7, .8, fbm(.5 * uv + 5. - vec2(0., .001 * u_time)));
+            float fire_border = .02 * show_fire;
+            float fire_edge = smoothstep(main_noise - fire_border, main_noise - .5 * fire_border, t);
+            fire_edge *= (1. - smoothstep(main_noise - .5 * fire_border, main_noise, t));
+            color += fire_color * fire_edge;
+            float opacity = 1. - smoothstep(main_noise - .0005, main_noise, t);
+            gl_FragColor = vec4(color, opacity);
+        }
+`;
   const gl =
     canvasEl.getContext("webgl") || canvasEl.getContext("experimental-webgl");
   if (!gl) {
