@@ -2508,64 +2508,49 @@ svg {
   display: none;
 }
 
+[data-theme="dark"] .about-description,
+[data-theme="dark"] .about-intro,
+[data-theme="dark"] .about-intro strong,
+[data-theme="dark"] .contact-info h3,
+[data-theme="dark"] .contact-info p,
+[data-theme="dark"] .contact-link,
 [data-theme="dark"] .education-card h3,
 [data-theme="dark"] .education-card h4,
-[data-theme="dark"] .specialization,
-[data-theme="dark"] .institution,
-[data-theme="dark"] .edu-list dt,
 [data-theme="dark"] .edu-list dd,
-[data-theme="dark"] .stat-number,
-[data-theme="dark"] .stat-label,
-[data-theme="dark"] .stat-sublabel,
-[data-theme="dark"] .projects-category-title,
-[data-theme="dark"] .project-card h3,
+[data-theme="dark"] .form-label,
 [data-theme="dark"] .gaming-zone-card h3,
 [data-theme="dark"] .gaming-zone-card h4,
 [data-theme="dark"] .gaming-zone-card p,
+[data-theme="dark"] .hero-title,
+[data-theme="dark"] .nav-link,
+[data-theme="dark"] .nav-logo a,
+[data-theme="dark"] .pill,
+[data-theme="dark"] .project-card h3,
 [data-theme="dark"] .project-description,
-[data-theme="dark"] .form-label,
-[data-theme="dark"] .about-intro strong,
+[data-theme="dark"] .project-description p,
+[data-theme="dark"] .project-header h3,
+[data-theme="dark"] .project-link,
+[data-theme="dark"] .projects-category-title,
+[data-theme="dark"] .section-title,
+[data-theme="dark"] .skill-name,
+[data-theme="dark"] .skills-head h3,
+[data-theme="dark"] .specialization,
+[data-theme="dark"] .stat-label,
+[data-theme="dark"] .stat-number,
 [data-theme="dark"] .tech-tag {
   color: var(--text-primary) !important;
 }
 
-[data-theme="dark"] .edu-list dd,
-[data-theme="dark"] .project-description p,
-[data-theme="dark"] .gaming-zone-card p,
-[data-theme="dark"] .stat-sublabel {
-  color: var(--text-secondary) !important;
-}
-
-[data-theme="dark"] .project-link {
-  color: var(--text-primary) !important;
-}
-
-[data-theme="dark"] .contact-info h3,
-[data-theme="dark"] .contact-link,
-[data-theme="dark"] .project-header h3,
-[data-theme="dark"] .contact-info p,
-[data-theme="dark"] .edu-list dd,
-[data-theme="dark"] .nav-logo a,
-[data-theme="dark"] .stat-label,
-[data-theme="dark"] .about-intro,
-[data-theme="dark"] .pill,
-[data-theme="dark"] .form-label,
-[data-theme="dark"] .education-card h4,
-[data-theme="dark"] .nav-link,
-[data-theme="dark"] .section-title,
-[data-theme="dark"] .about-description,
-[data-theme="dark"] .education-card h3,
-[data-theme="dark"] .stat-number,
-[data-theme="dark"] .project-description p,
-[data-theme="dark"] .skills-head h3,
-[data-theme="dark"] .about-intro strong {
-  color: var(--text-primary) !important;
-}
-
-[data-theme="dark"] .university,
 [data-theme="dark"] .edu-list dt,
-[data-theme="dark"] .institution {
+[data-theme="dark"] .hero-description,
+[data-theme="dark"] .institution,
+[data-theme="dark"] .stat-sublabel,
+[data-theme="dark"] .university {
   color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .hero-subtitle {
+  color: var(--accent-color) !important;
 }
 
 :root[data-theme="dark"],
@@ -2584,24 +2569,6 @@ svg {
   --light-grey: var(--border-color) !important;
 }
 
-[data-theme="dark"] .hero-title {
-  color: var(--text-primary) !important;
-}
-
-[data-theme="dark"] .hero-subtitle {
-  color: var(--accent-color) !important;
-}
-
-[data-theme="dark"] .hero-description {
-  color: var(--text-secondary) !important;
-}
-
-[data-theme="dark"] img[src*="flask-original.svg"],
-[data-theme="dark"] img[src*="django-plain.svg"] {
-  filter: brightness(0) invert(1) !important;
-}
-
-/* Featured Projects & Highlights */
 .projects-category-title {
   font-size: 1.35rem;
   font-weight: 600;
@@ -2625,14 +2592,12 @@ svg {
   border: 1px solid var(--border-color);
 }
 
-/* Play button styled as anchor */
 .play-btn {
   text-decoration: none !important;
   font-weight: 600;
   font-size: 0.9rem;
 }
 
-/* Gaming Zone Spacing */
 .gaming-zone-card {
   display: flex;
   flex-direction: column;
@@ -2640,7 +2605,12 @@ svg {
   gap: 0.75rem;
 }
 
-/* Footer Styling */
+.footer {
+  background-color: var(--bg-secondary) !important;
+  border-top: 1px solid var(--border-color) !important;
+  padding: 2.5rem 0 !important;
+}
+
 .footer-links {
   display: flex;
   align-items: center;
@@ -2649,34 +2619,6 @@ svg {
   margin-bottom: 0.75rem;
   font-size: 1rem;
   font-weight: 500;
-}
-
-.footer-links a {
-  color: var(--white);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.footer-links a:hover {
-  color: var(--accent-color);
-}
-
-.footer-sep {
-  color: var(--accent-color);
-  opacity: 0.6;
-}
-
-.footer-copy {
-  font-size: 0.9rem;
-  opacity: 0.85;
-  margin: 0;
-}
-
-/* Footer Visibility Fix */
-.footer {
-  background-color: var(--bg-secondary) !important;
-  border-top: 1px solid var(--border-color) !important;
-  padding: 2.5rem 0 !important;
 }
 
 .footer-links a {
@@ -2699,17 +2641,30 @@ svg {
   color: var(--text-secondary) !important;
   font-size: 0.9rem !important;
   opacity: 0.9 !important;
+  margin: 0 !important;
 }
 
-/* Technical Skills Icons & Text Dark Mode Fix */
-[data-theme="dark"] .skill-name {
-  color: var(--text-primary) !important;
+.hamburger,
+button.hamburger {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  cursor: pointer !important;
 }
 
-[data-theme="dark"] img[src*="flask-original.svg"],
-[data-theme="dark"] img[src*="django-plain.svg"],
-[data-theme="dark"] img[src*="github-original.svg"],
-[data-theme="dark"] img[src*="vercel-original.svg"],
-[data-theme="dark"] img[src*="nextjs-original.svg"] {
-  filter: brightness(0) invert(1) !important;
+[data-theme="dark"] .hamburger span {
+  background: var(--text-primary) !important;
+}
+
+[data-theme="dark"] img[src*="flask"],
+[data-theme="dark"] img[src*="django"],
+[data-theme="dark"] img[src*="github"],
+[data-theme="dark"] img[src*="vercel"],
+[data-theme="dark"] img[src*="nextjs"] {
+  filter: invert(1) !important;
 }
